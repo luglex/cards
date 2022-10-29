@@ -19,6 +19,11 @@ Try >> isCorrect [
 ]
 
 { #category : #accessing }
+Try >> solution [
+	^ solution
+]
+
+{ #category : #accessing }
 Try >> solution: aString [
 	solution := aString
 ]

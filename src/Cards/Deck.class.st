@@ -17,5 +17,6 @@ Deck >> gtCardListFor: aView [
 	<gtView>
 	^aView list
 	title: 'Cards';
-	items: [cards]
+	items: [cards];
+	itemText: [:aCard| aCard text]
 ]

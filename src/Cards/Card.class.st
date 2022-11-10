@@ -13,29 +13,29 @@ Card >> gtLiveFor: aView [
 	<gtView>
 	| textElement cardElement solutionElement firstElement |
 	^ aView explicit
-	title: 'Live';
-	stencil: [textElement := BrLabel new
-		aptitude: BrGlamorousLabelAptitude;
-		text: self text.
-solutionElement := BrLabel new
-		aptitude: BrGlamorousLabelAptitude ;
-		text: self solution.
-cardElement := BrVerticalPane new
-		background: Color white;
-		alignCenter;
-		exact: (200@200);
-		aptitude: BrShadowAptitude new beLarge;
-		margin: (BlInsets all: 10).
-cardElement
-	addChild: textElement;
-	when: BlClickEvent
-		do: [ :event |
-			firstElement := cardElement children first.
-			cardElement removeChildren.
-			textElement = firstElement
-				ifTrue: [cardElement addChild: solutionElement]
-				ifFalse: [cardElement addChild: textElement] ].
-cardElement]
+		title: 'Live';
+		stencil: [ textElement := BrLabel new
+					aptitude: BrGlamorousLabelAptitude;
+					text: self text.
+			solutionElement := BrLabel new
+					aptitude: BrGlamorousLabelAptitude;
+					text: self solution.
+			cardElement := BrVerticalPane new
+					background: Color white;
+					alignCenter;
+					exact: 200 @ 200;
+					aptitude: BrShadowAptitude new beLarge;
+					margin: (BlInsets all: 10).
+			cardElement
+				addChild: textElement;
+				when: BlClickEvent
+					do: [ :event | 
+						firstElement := cardElement children first.
+						cardElement removeChildren.
+						textElement = firstElement
+							ifTrue: [ cardElement addChild: solutionElement ]
+							ifFalse: [ cardElement addChild: textElement ] ].
+			cardElement ]
 ]
 
 { #category : #accessing }
